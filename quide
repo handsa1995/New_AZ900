@@ -1,0 +1,471 @@
+# AZ-900 Azure AI Fundamentals - Complete Study Guide
+
+## Table of Contents
+1. Cloud Concepts & Benefits
+2. Machine Learning Fundamentals
+3. Azure AI Services Overview
+4. Computer Vision Services
+5. Natural Language Processing
+6. Responsible AI & Ethics
+7. Practical Applications & Use Cases
+8. Exam Tips & Best Practices
+
+---
+
+## 1. CLOUD CONCEPTS & BENEFITS
+
+### What is Cloud Computing?
+Cloud computing is the delivery of computing services (servers, storage, databases, software) over the internet ("the cloud") instead of maintaining physical infrastructure on-premises.
+
+### Key Cloud Benefits:
+- **Scalability**: Easily scale resources up or down based on demand
+- **Elasticity**: Automatically adjust resources in response to workload changes
+- **Availability**: Services remain accessible even during outages (high availability)
+- **Reliability**: Built-in redundancy and backup systems
+- **Cost-effective**: Pay-as-you-go model with no upfront capital investment
+- **Flexibility**: Access services from anywhere, on any device
+
+### Azure Cloud Deployment Models:
+- **Public Cloud**: Resources shared across multiple customers (Azure)
+- **Private Cloud**: Dedicated resources for a single organization
+- **Hybrid Cloud**: Combination of public and private cloud resources
+
+---
+
+## 2. MACHINE LEARNING FUNDAMENTALS
+
+### Types of Machine Learning:
+
+**Supervised Learning**
+- Uses labeled training data (features + labels)
+- Goal: Predict outcomes based on labeled examples
+- Examples: Classification, Regression
+- Use cases: Email spam detection, price prediction
+
+**Unsupervised Learning**
+- Uses unlabeled data with no predefined labels
+- Goal: Discover hidden patterns or groupings
+- Examples: Clustering, Dimensionality reduction
+- Use cases: Customer segmentation, recommendation systems
+
+**Reinforcement Learning**
+- Agent learns by interacting with environment and receiving rewards/penalties
+- Goal: Find optimal strategy through trial and error
+- Use cases: Game playing AI, autonomous vehicles, robotics
+
+### Machine Learning Problem Types:
+
+**Classification**
+- Predict which category/class an item belongs to
+- Output: Discrete categories
+- Examples: Email spam/not spam, image categorization
+- Evaluation metrics: Accuracy, Precision, Recall, F1-Score
+
+**Regression**
+- Predict continuous numerical values
+- Output: Real numbers
+- Examples: House price prediction, temperature forecasting, sales forecasting
+- Evaluation metrics: Mean Squared Error (MSE), R-squared
+
+**Clustering**
+- Group similar data points without predefined labels
+- Output: Groups/clusters of similar items
+- Examples: Customer segmentation, document clustering
+- Algorithm: K-means, hierarchical clustering
+
+**Anomaly Detection**
+- Identify unusual or abnormal data points
+- Output: Normal or abnormal classification
+- Examples: Fraud detection, equipment failure prediction
+- Use case: IoT sensor monitoring
+
+### Key ML Concepts:
+
+**Features vs Labels**
+- **Features**: Input variables used for prediction
+- **Labels**: Target variable we want to predict
+- Example: House prices prediction
+  - Features: square footage, location, age, bedrooms
+  - Label: price
+
+**Training vs Evaluation**
+- **Training data**: Used to teach the model patterns (~80%)
+- **Evaluation/Test data**: Used to assess model performance (~20%)
+- Randomly split data by rows (not columns) for proper evaluation
+
+**Model Evaluation Metrics**
+- **Accuracy**: Percentage of correct predictions
+- **Precision**: Of positive predictions, how many were correct?
+- **Recall**: Of actual positives, how many did we find?
+- **Mean Squared Error (MSE)**: Average squared difference (for regression)
+
+---
+
+## 3. AZURE AI SERVICES OVERVIEW
+
+### Azure Cognitive Services
+Pre-built AI models available as REST APIs and SDKs. No machine learning expertise required.
+
+#### Categories:
+
+**Vision Services**
+- **Azure Computer Vision**: Image analysis, object detection, OCR, facial analysis
+- **Azure Custom Vision**: Create custom image classification/object detection models
+- **Azure Face API**: Detect, analyze, and identify faces in images
+- **Azure Form Recognizer**: Extract text and data from documents (receipts, invoices)
+
+**Language Services**
+- **Azure Text Analytics**: Sentiment analysis, key phrase extraction, entity recognition
+- **Azure Translator**: Translate text between languages
+- **Azure Language Understanding (LUIS)**: Understand natural language intents and entities
+- **Azure QnA Maker**: Build question-answering bots from knowledge bases
+- **Azure Content Moderator**: Detect offensive or unwanted content
+
+**Speech Services**
+- **Azure Speech-to-Text**: Transcribe speech into text
+- **Azure Text-to-Speech**: Generate natural-sounding speech from text
+- **Azure Speech Translation**: Translate speech in real-time
+- **Azure Speaker Recognition**: Identify and verify speakers
+
+**Search & Recommendations**
+- **Azure Cognitive Search**: AI-powered search capabilities for large datasets
+- **Azure Personalizer**: Personalize user experiences with reinforcement learning
+
+**Data & Analytics**
+- **Azure Anomaly Detector**: Detect unusual patterns in time-series data
+- **Azure Metrics Advisor**: Detect and diagnose anomalies in metrics
+- **Azure Video Indexer**: Extract insights from video content
+
+### Azure Machine Learning
+Full-service platform for building, training, and deploying custom ML models.
+
+**Key Features**:
+- **Designer**: Visual interface for building ML pipelines
+- **Automated ML**: Automatically train and optimize models
+- **SDK/Python support**: For advanced users
+- **MLOps**: Version control, deployment, monitoring
+
+### Other AI Services
+
+**Azure Bot Service**
+- Build and deploy intelligent chatbots
+- Integrates with Cognitive Services for NLP
+- Multi-channel support (web, Teams, Slack, etc.)
+
+**Azure Databricks**
+- Collaborative Apache Spark-based analytics platform
+- Data engineering and data science workflows
+- Big data processing
+
+**Azure Time Series Insights**
+- Analyze time-series data and detect patterns
+- Predict future values based on historical trends
+
+**Azure OpenAI Service**
+- Access to GPT models for text generation
+- Create applications with advanced language understanding
+
+**Azure Immersive Reader**
+- Improve reading comprehension
+- Support for students with learning disabilities
+- Audio and visual formatting options
+
+**Azure Ink Recognizer**
+- Recognize and analyze digital ink
+- Handwriting and drawing recognition
+
+---
+
+## 4. COMPUTER VISION SERVICES
+
+### Azure Computer Vision
+**Capabilities**:
+- Image classification (categorize images)
+- Object detection (locate specific objects)
+- Optical Character Recognition (OCR - extract text from images)
+- Facial analysis (detect faces, age, emotion)
+- Description generation (describe image content)
+
+**NOT Included**:
+- Language translation (use Azure Translator instead)
+
+### Azure Custom Vision
+**Purpose**: Create custom image classification and object detection models
+
+**Workflow**:
+1. Collect and label training images
+2. Upload images to Custom Vision portal
+3. Train the model
+4. Test and evaluate performance
+5. Publish and use the model via API
+
+### Azure Face API
+**Operations**:
+- **Detect**: Find faces in images and analyze facial features
+- **Identify**: Verify or identify specific people
+- **Verify**: Check if two faces belong to the same person
+- **Group**: Organize faces into clusters
+
+**Use Cases**:
+- Facial recognition systems
+- Photo organization
+- Attendance tracking
+
+---
+
+## 5. NATURAL LANGUAGE PROCESSING (NLP)
+
+### Azure Text Analytics
+**Capabilities**:
+- Sentiment analysis (positive, negative, neutral)
+- Key phrase extraction (important terms)
+- Entity recognition (people, places, organizations)
+- Language detection
+- Linked entities (connect mentions to Wikipedia)
+
+**Use Case**: Analyze customer feedback and reviews
+
+### Azure Language Understanding (LUIS)
+**Purpose**: Parse user input to understand intent and extract entities
+
+**Components**:
+- **Intent**: What does the user want? (e.g., "GetWeather", "BookFlight")
+- **Entity**: Key information in the utterance (e.g., location, date, time)
+
+**Example**:
+- User: "I want to book a flight to New York on Friday"
+- Intent: BookFlight
+- Entities: Destination=New York, Date=Friday
+
+### Azure Translator
+- Translate text between 90+ languages
+- Supports document translation
+- Detects source language automatically
+
+### Azure Speech Services
+**Speech-to-Text**
+- Convert spoken audio to text transcriptions
+- Real-time or batch processing
+- Multiple language support
+
+**Text-to-Speech**
+- Convert text into natural-sounding speech
+- Multiple voice options and languages
+
+**Speech Translation**
+- Translate speech in real-time
+- Use case: Live conference translation
+
+---
+
+## 6. RESPONSIBLE AI & MICROSOFT PRINCIPLES
+
+### Microsoft's Six Guiding Principles for Responsible AI:
+
+**1. Fairness**
+- AI systems should not discriminate
+- Decisions should be unbiased and equitable
+- Address algorithmic bias in training data
+- Test for disparate impact on different groups
+
+**2. Transparency**
+- Explain how AI systems make decisions
+- Users should understand why decisions are made
+- Provide interpretable models
+- Document data sources and limitations
+
+**3. Accountability**
+- Clear responsibility for AI system outcomes
+- Establish governance structures
+- Regular audits and assessments
+- Incident response procedures
+
+**4. Inclusiveness**
+- Design AI systems to empower everyone
+- Consider people with disabilities
+- Accessibility features (screen readers, captions)
+- Diverse training data representation
+
+**5. Reliability & Safety**
+- AI systems should be robust and secure
+- Fail gracefully when errors occur
+- Regular testing and validation
+- Cybersecurity measures
+
+**6. Privacy & Security**
+- Protect user data and privacy
+- Comply with regulations (GDPR, HIPAA, CCPA)
+- Implement data protection measures
+- Transparent data collection practices
+
+### Implementing Responsible AI:
+
+**Risk Governance Committee**
+- Legal team members
+- Risk management specialists
+- Privacy officers
+- Ethics representatives
+
+**Development Practices**
+- Include AI model validation in code review
+- Diverse training datasets
+- Bias detection and mitigation
+- Regular model monitoring and updates
+
+**Documentation**
+- AI system capabilities and limitations
+- Data sources and quality
+- Testing methodology
+- Known issues and workarounds
+
+---
+
+## 7. PRACTICAL APPLICATIONS & USE CASES
+
+### Computer Vision Applications
+- **Retail**: Inventory management, customer analysis
+- **Manufacturing**: Quality inspection, defect detection
+- **Healthcare**: Medical image analysis, diagnostic support
+- **Security**: Surveillance, unauthorized access detection
+
+### NLP Applications
+- **Customer Service**: Chatbots, sentiment analysis
+- **Content Moderation**: Filter inappropriate content
+- **Information Extraction**: Extract data from documents
+- **Translation**: Multilingual customer support
+
+### Anomaly Detection Applications
+- **Finance**: Fraud detection in transactions
+- **IoT**: Equipment failure prediction, sensor monitoring
+- **Manufacturing**: Predictive maintenance
+- **Network Security**: Unusual traffic pattern detection
+
+### Personalization Applications
+- **E-commerce**: Product recommendations
+- **Streaming**: Content recommendations (Netflix, Spotify)
+- **Marketing**: Personalized offers and campaigns
+- **User Experience**: Tailored interfaces and features
+
+---
+
+## 8. EXAM TIPS & BEST PRACTICES
+
+### Key Concepts to Remember:
+
+1. **Azure Cognitive Services** = Pre-built, ready-to-use AI models
+2. **Azure Machine Learning** = Build custom ML models from scratch
+3. **Supervised Learning** = Uses labeled data; good for classification/regression
+4. **Unsupervised Learning** = No labels; finds patterns (clustering)
+5. **Classification** = Predict categories; **Regression** = Predict numbers
+6. **Fairness** = No bias; **Transparency** = Explainable decisions
+7. **Features** = Input variables; **Labels** = Target output
+8. **Training data** (~80%) used to teach; **Test data** (~20%) to evaluate
+
+### Common Exam Scenarios:
+
+**Scenario: Building an app that understands user commands**
+→ Answer: Azure Language Understanding (LUIS) or Azure Cognitive Services
+
+**Scenario: Analyzing customer reviews for sentiment**
+→ Answer: Azure Text Analytics
+
+**Scenario: Detecting faces in photos**
+→ Answer: Azure Face API or Azure Computer Vision
+
+**Scenario: Creating custom image classification model**
+→ Answer: Azure Custom Vision
+
+**Scenario: Detecting unusual patterns in time-series sensor data**
+→ Answer: Azure Anomaly Detector
+
+**Scenario: Building chatbot**
+→ Answer: Azure Bot Service
+
+**Scenario: Predicting future values from historical data**
+→ Answer: Regression model using Azure Machine Learning
+
+**Scenario: Grouping customers by behavior without labels**
+→ Answer: Clustering (unsupervised learning)
+
+### Responsible AI Scenarios:
+
+**Scenario: Ensure AI system is transparent**
+→ Answer: Enable explainability features, document decisions
+
+**Scenario: Ensure AI system is fair**
+→ Answer: Test for bias, use diverse training data
+
+**Scenario: Empower users with disabilities**
+→ Answer: Inclusiveness principle - add accessibility features
+
+### Test-Taking Tips:
+
+1. Read questions carefully - one word can change the answer
+2. Eliminate obviously wrong answers first
+3. When comparing Azure services, think about what each does specifically
+4. Responsible AI questions often have multiple "good" options - pick the MOST responsible
+5. If unsure between similar services, think about the use case
+6. Review the practice questions multiple times - patterns emerge
+
+### Study Resources:
+
+- Microsoft Learn: https://learn.microsoft.com/en-us/certifications/azure-ai-fundamentals/
+- Azure AI Services Documentation
+- Practice tests and sample exams
+- Official exam study guides
+
+---
+
+## QUICK REFERENCE: AZURE SERVICES BY USE CASE
+
+| Use Case | Azure Service |
+|----------|---------------|
+| Image analysis & object detection | Azure Computer Vision |
+| Custom image classification | Azure Custom Vision |
+| Face detection & recognition | Azure Face API |
+| Extract data from documents | Azure Form Recognizer |
+| Sentiment & key phrase analysis | Azure Text Analytics |
+| Understand user intents | Azure Language Understanding (LUIS) |
+| Create chatbots | Azure Bot Service |
+| Translate text | Azure Translator |
+| Transcribe speech | Azure Speech-to-Text |
+| Generate speech | Azure Text-to-Speech |
+| Detect unusual patterns | Azure Anomaly Detector |
+| AI-powered search | Azure Cognitive Search |
+| Personalized experiences | Azure Personalizer |
+| Custom ML models | Azure Machine Learning |
+| Big data analytics | Azure Databricks |
+| Improve readability | Azure Immersive Reader |
+| Content moderation | Azure Content Moderator |
+
+---
+
+## GLOSSARY
+
+**Algorithm**: Step-by-step procedure for solving a problem or completing a task
+**Bias**: Systematic error in AI models, often due to unrepresentative training data
+**Classification**: ML task to predict discrete categories
+**Clustering**: Grouping similar items without predefined labels
+**Cognitive Services**: Pre-built AI services by Microsoft Azure
+**Entity**: A person, place, or thing (used in NLP)
+**Fairness**: AI principle ensuring unbiased decisions
+**Features**: Input variables used to make predictions
+**Intent**: What the user wants to accomplish (in NLP)
+**Label**: Target output variable in supervised learning
+**ML Model**: Mathematical representation of patterns learned from data
+**NLP**: Natural Language Processing - AI's ability to understand human language
+**Precision**: Of positive predictions, how many were correct?
+**Recall**: Of all actual positives, how many did we find?
+**Regression**: ML task to predict continuous numerical values
+**Responsible AI**: Ethical and trustworthy AI practices
+**Sentiment**: Emotional tone (positive, negative, neutral)
+**Supervised Learning**: Learning from labeled training data
+**Transparency**: Ability to explain AI decisions
+**Unsupervised Learning**: Learning from unlabeled data
+**Validation**: Testing ML model on separate data
+
+---
+
+**Last Updated**: April 2026
+**Version**: 1.0
+**Total Pages Estimated**: 25-30 pages (PDF)
